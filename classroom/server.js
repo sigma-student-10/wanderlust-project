@@ -9,14 +9,7 @@ const path = require("path");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-const sessionOptions = {
-  secret: "mysupersecretestring",
-  resave: false,
-  saveUninitialized: true,
-};
 
-app.use(session(sessionOptions));
-app.use(flash());
 
 app.use((req, res, next) => {
     res.locals.successMsg = req.flash("success");
