@@ -119,3 +119,11 @@ body {
 .btns {
     display: flex;
 }
+
+.edit-listing-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    object-fit: contain;
+}
