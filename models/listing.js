@@ -25,6 +25,17 @@ image: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },
+   geometry: {
+      type: {
+        type: String,
+        enum: ['Point'], // Enforce 'Point' as the only allowed value
+        required: true
+      },
+      coordinates: {
+        type: [Number], // Array of numbers: [longitude, latitude]
+        required: true
+  }
+}
 });
 
 listingSchema.post("findOneAndDelete", async(listing) => {
